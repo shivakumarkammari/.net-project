@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.zip'
+  solution: '**/*.exe'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -34,7 +34,7 @@ steps:
     configuration: '$(buildConfiguration)'
 - task: CopyFiles@2
   inputs:
-    Contents: '**/*.zip'
+    Contents: '**/*.exe'
     TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
